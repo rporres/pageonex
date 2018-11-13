@@ -12,8 +12,8 @@ stages:
     if: tag IS present
 
 before_install:
-  - apt-get update
-  - apt-get install -y mysql-client libpq-dev libxml2-dev
+  - sudo apt-get update
+  - sudo apt-get install -y mysql-client libpq-dev libxml2-dev
   - gem update --system
   - gem install --force bundler
   - gem install debugger-ruby_core_source
