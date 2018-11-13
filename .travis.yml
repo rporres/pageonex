@@ -1,12 +1,18 @@
-dist: xenial
+dist: trusty
 
 language: ruby
+
+rvm:
+  - 1.9.3-p551
+
+sudo: required
 
 stages:
   - name: release
     if: tag IS present
 
 before_install:
+  - apt-get update
   - apt-get install -y mysql-client libpq-dev libxml2-dev
   - gem update --system
   - gem install --force bundler
