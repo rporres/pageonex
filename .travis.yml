@@ -1,0 +1,12 @@
+language: ruby
+
+stages:
+  - name: release
+    if: tag IS present
+
+jobs:
+  include:
+    - name: 'Push image to Docker Hub'
+      stage: release
+      script:
+        - make docker-push
